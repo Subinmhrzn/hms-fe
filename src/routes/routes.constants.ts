@@ -8,5 +8,8 @@ export const Route = {
   User: {
     PatientKyc: "/user/patient-kyc",
   },
+  Dashboard: {
+    Index: "/dashboard",
+  },
   NotFound: "*",
 };
