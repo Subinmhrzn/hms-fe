@@ -5,6 +5,7 @@ const envSchema = z.object({
     .enum(["development", "production", "test"])
     .default("development"),
   VITE_API_URL: z.url().optional(),
+  VITE_CLOUDINARY_UPLOAD_PRESET: z.string(),
 });
 
 type Env = z.infer<typeof envSchema>;
@@ -14,6 +15,8 @@ function validateEnv(): Env {
     return envSchema.parse({
       NODE_ENV: import.meta.env.NODE_ENV,
       VITE_API_URL: import.meta.env.VITE_API_URL,
+      VITE_CLOUDINARY_UPLOAD_PRESET: import.meta.env
+        .VITE_CLOUDINARY_UPLOAD_PRESET,
     });
   } catch (error) {
     console.error("❌ Invalid environment variables:", error);

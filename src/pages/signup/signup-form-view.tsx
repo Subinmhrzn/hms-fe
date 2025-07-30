@@ -33,8 +33,8 @@ export const SignupFormView: React.FC<SignupFormViewProps> = ({
             <div className="flex flex-col gap-6">
               <InputField
                 control={control}
-                label="Full Name"
-                name="fullName"
+                label="Username"
+                name="username"
                 placeholder="John Doe"
               />
               <InputField

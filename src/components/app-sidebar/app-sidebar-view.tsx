@@ -10,35 +10,32 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link } from "react-router";
 import { LaptopMinimalIcon } from "lucide-react";
 import { SidebarNavItems } from "./app-sidebar.constants";
+import { Link } from "react-router";
 
 export const AppSidebarView: React.FC<AppSidebarViewProps> = () => {
   return (
-    <Sidebar collapsible="offcanvas">
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
-            >
-              <Link to="#">
-                <LaptopMinimalIcon className="!size-5" />
-                <span className="text-base font-semibold">Hackathon</span>
-              </Link>
+            <SidebarMenuButton className="data-[slot=sidebar-menu-button]:!p-1.5">
+              <LaptopMinimalIcon className="!size-5" />
+              <span className="text-base font-semibold">Hackathon</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="p-2">
         <SidebarMenu>
           {SidebarNavItems.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
-                {item.icon && <item.icon />}
-                <span>{item.title}</span>
+              <SidebarMenuButton tooltip={item.title} asChild>
+                <Link to={item.to}>
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

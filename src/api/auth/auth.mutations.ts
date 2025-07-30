@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { signup } from "./auth";
+import { login, signup } from "./auth";
 
 export const useSignupMutation = () =>
   useMutation({
@@ -7,5 +7,14 @@ export const useSignupMutation = () =>
     meta: {
       successMessage: "User registered",
       errorMessage: "User registration failed",
+    },
+  });
+
+export const useLoginMutation = () =>
+  useMutation({
+    mutationFn: login,
+    meta: {
+      successMessage: "Logged In!",
+      errorMessage: "Login failed",
     },
   });

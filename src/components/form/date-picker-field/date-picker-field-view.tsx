@@ -12,7 +12,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Label } from "@/components/ui/label";
 
 export const DatePickerFieldView = <TFieldValues extends FieldValues>(
-  props: DatePickerFieldViewProps<TFieldValues>
+  props: DatePickerFieldViewProps<TFieldValues>,
 ) => {
   const date = props.field.value;
   const onSelect = props.field.onChange;
@@ -43,7 +43,7 @@ export const DatePickerFieldView = <TFieldValues extends FieldValues>(
             mode="single"
             selected={date}
             captionLayout="dropdown"
-            onSelect={onSelect}
+            onSelect={(val) => onSelect(val?.toString())}
           />
         </PopoverContent>
       </Popover>

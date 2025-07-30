@@ -1,13 +1,23 @@
+import type { User } from "../user/user.types";
+
 export type SignupRequestDto = {
-  fullName: string;
+  username: string;
   email: string;
   password: string;
 };
 
+export type LoginRequestDto = Pick<SignupRequestDto, "email" | "password">;
+
 export type SignupResponseDto = {
-  uuid: string;
-  fullName: string;
-  email: string;
-  createdAt: string;
-  updatedAt: string;
+  accessToken: string;
+  user: User;
+};
+
+export type LoginResponseDto = {
+  accessToken: string;
+  user: User;
+};
+
+export type RefreshResponseDto = {
+  accessToken: string;
 };

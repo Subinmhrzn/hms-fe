@@ -35,14 +35,14 @@ export const PatientKycView: React.FC<PatientKycViewProps> = ({
                 <div className="grid gap-6 grid-cols-3">
                   <InputField
                     control={control}
-                    label="Full Name"
-                    name="fullName"
-                    placeholder="John Doe"
+                    label="Username"
+                    name="username"
+                    placeholder="johnDoe"
                   />
                   <InputField
                     control={control}
-                    label="Username"
-                    name="userName"
+                    label="Full Name"
+                    name="fullName"
                     placeholder="John Doe"
                   />
                   <InputField

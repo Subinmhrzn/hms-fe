@@ -1,3 +1,4 @@
+import { HttpError } from "@/lib/axios/http-client";
 import {
   MutationCache,
   QueryClient,
@@ -9,13 +10,17 @@ import toast from "react-hot-toast";
 const mutationCache = new MutationCache({
   onSuccess(_data, _variables, _context, mutation) {
     const message = mutation.meta?.successMessage;
-    console.log({ message });
     if (message) {
       toast.success(message);
     }
   },
-  onError(_data, _variables, _context, mutation) {
-    const message = mutation.meta?.errorMessage;
+  onError(data, _variables, _context, mutation) {
+    let message;
+    if (data instanceof HttpError) {
+      message = data.message;
+    } else {
+      message = mutation.meta?.errorMessage;
+    }
     if (message) {
       toast.error(message);
     }

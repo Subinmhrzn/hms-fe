@@ -1,9 +1,11 @@
 import z from "zod";
 
 export const patient_kyc_schema = z.object({
+  username: z.string().min(1, "Username is required"),
   fullName: z.string().min(1, "Full name is required"),
-  userName: z.string().min(1, "Username is required"),
-  dob: z.iso.date().min(1, "Date of birth is required"),
+  dob: z.string().refine((val) => !isNaN(Date.parse(val)), {
+    message: "Date of birth must be a valid ISO date",
+  }),
   address: z.string(),
   phoneNumber: z.string(),
   emergencyContact: z.string(),

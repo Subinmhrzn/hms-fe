@@ -16,7 +16,7 @@ export const HttpClient = {
     createRequest<T>("delete", url, undefined, config),
 };
 
-class HttpError extends Error {
+export class HttpError extends Error {
   statusCode?: number;
   details?: unknown;
 
@@ -32,7 +32,7 @@ const createRequest = async <TData>(
   method: MethodType,
   url: string,
   data?: unknown,
-  config?: AxiosRequestConfig<TData>
+  config?: AxiosRequestConfig<TData>,
 ): Promise<AxiosResponse<TData>> => {
   try {
     switch (method) {
@@ -57,8 +57,8 @@ const createRequest = async <TData>(
 
       if (!responseData) {
         message = err.message;
-      } else if (typeof responseData?.detail === "string") {
-        message = responseData.detail;
+      } else if (typeof responseData?.message === "string") {
+        message = responseData.message;
       } else {
         message = "Unexpected server error";
         details = responseData;

@@ -7,9 +7,14 @@ export const Route = {
   },
   User: {
     PatientKyc: "/user/patient-kyc",
+    DoctorKyc: "/user/doctor-kyc",
+    HospitalKyc: "/user/hospital-kyc",
   },
   Dashboard: {
     Index: "/dashboard",
+    PatientKyc: "/dashboard/patient-kyc",
+    DoctorKyc: "/dashboard/doctor-kyc",
+    HospitalKyc: "/dashboard/hospital-kyc",
   },
   NotFound: "*",
 };
