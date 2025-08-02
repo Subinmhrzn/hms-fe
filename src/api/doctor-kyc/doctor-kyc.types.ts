@@ -10,6 +10,7 @@ export type CreateDoctorKycRequestDto = {
 };
 
 export type CreateDoctorKycResponseDto = {
+  uuid: string;
   userId: string;
   fullName: string;
   dob: string;
@@ -22,4 +23,13 @@ export type CreateDoctorKycResponseDto = {
   status: string;
   verifiedAt?: Date;
   verifiedBy?: string;
+  rejectedReason?: string;
+};
+
+export type GetAllDoctorKycResponseDto = CreateDoctorKycResponseDto[];
+
+export type VerifyDoctorKycRequestDto = {
+  id: string;
+  status: string;
+  rejectedReason?: string;
 };

@@ -19,3 +19,7 @@ export const login = (data: LoginRequestDto) => {
 export const refresh = () => {
   return HttpClient.post<RefreshResponseDto>(AUTH_API.REFRESH);
 };
+
+export const logout = () => {
+  return HttpClient.post(AUTH_API.LOGOUT);
+};

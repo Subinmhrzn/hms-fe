@@ -45,7 +45,7 @@ export const useDoctorKyc = () => {
   const onSubmit = handleSubmit(async (data) => {
     await createDoctorKyc(data);
     updateKycStatusInLocalStorage();
-    navigate(Route.Dashboard.Index);
+    navigate(Route.Auth.Login);
   });
 
   return {

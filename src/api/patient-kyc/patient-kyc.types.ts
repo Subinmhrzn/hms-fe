@@ -29,6 +29,13 @@ export type CreatePatientKycResponseDto = {
   status: string;
   verifiedAt?: Date;
   verifiedBy?: string;
+  rejectedReason?: string;
 };
 
-export type GetAllPatientKycResponseDto = CreatePatientKycRequestDto[];
+export type GetAllPatientKycResponseDto = CreatePatientKycResponseDto[];
+
+export type VerifyPatientKycRequestDto = {
+  id: string;
+  status: string;
+  rejectedReason?: string;
+};

@@ -43,7 +43,7 @@ export const useHospitalKyc = () => {
   const onSubmit = handleSubmit(async (data) => {
     await createHospitalKyc(data);
     updateKycStatusInLocalStorage();
-    navigate(Route.Dashboard.Index);
+    navigate(Route.Auth.Login);
   });
 
   return {

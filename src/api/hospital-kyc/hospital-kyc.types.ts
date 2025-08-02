@@ -8,6 +8,7 @@ export type CreateHospitalKycRequestDto = {
 };
 
 export type CreateHospitalKycResponseDto = {
+  uuid: string;
   userId: string;
   hospitalName: string;
   licenseNumber: string;
@@ -19,4 +20,13 @@ export type CreateHospitalKycResponseDto = {
   status?: string;
   verifiedAt?: Date;
   verifiedBy?: string;
+  rejectedReason?: string;
+};
+
+export type GetAllHospitalKycResponseDto = CreateHospitalKycResponseDto[];
+
+export type VerifyHospitalKycRequestDto = {
+  id: string;
+  status: string;
+  rejectedReason?: string;
 };

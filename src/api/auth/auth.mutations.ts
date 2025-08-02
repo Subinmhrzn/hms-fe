@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { login, signup } from "./auth";
+import { login, logout, signup } from "./auth";
 
 export const useSignupMutation = () =>
   useMutation({
@@ -16,5 +16,14 @@ export const useLoginMutation = () =>
     meta: {
       successMessage: "Logged In!",
       errorMessage: "Login failed",
+    },
+  });
+
+export const useLogoutMutation = () =>
+  useMutation({
+    mutationFn: logout,
+    meta: {
+      successMessage: "Logged out",
+      errorMessage: "Logout failed",
     },
   });

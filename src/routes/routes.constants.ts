@@ -13,8 +13,20 @@ export const Route = {
   Dashboard: {
     Index: "/dashboard",
     PatientKyc: "/dashboard/patient-kyc",
+    PatientKycDetail: "/dashboard/patient-kyc/:patientKycId",
     DoctorKyc: "/dashboard/doctor-kyc",
+    DoctorKycDetail: "/dashboard/doctor-kyc/:doctorKycId",
     HospitalKyc: "/dashboard/hospital-kyc",
+    HospitalKycDetail: "/dashboard/hospital-kyc/:hospitalKycId",
+    MyKyc: "/dashboard/my-kyc",
+    MyPatientKycResubmitForm: "/dashboard/my-kyc/patient-resubmit",
+    HospitalSearchDoctor: "/dashboard/hospital/search-doctor",
+    HospitalMyDoctors: "/dashboard/hospital/my-doctors",
+    HospitalDoctorView: "/dashboard/hospital/my-doctors/:doctorKycId",
+    PatientSearchHospitals: "/dashboard/patient/hospitals",
+    PatientSearchHospitalDoctors: "/dashboard/patient/hospitals/:hospitalId",
+    PatientSearchHospitalDoctorsView:
+      "/dashboard/patient/hospitals/:hospitalId/:doctorId",
   },
   NotFound: "*",
-};
+} as const;

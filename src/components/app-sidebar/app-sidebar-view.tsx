@@ -11,10 +11,13 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { LaptopMinimalIcon } from "lucide-react";
-import { SidebarNavItems } from "./app-sidebar.constants";
 import { Link } from "react-router";
+import { cn } from "@/lib/utils";
 
-export const AppSidebarView: React.FC<AppSidebarViewProps> = () => {
+export const AppSidebarView: React.FC<AppSidebarViewProps> = ({
+  isActiveRoute,
+  roleFilteredSidebarItems,
+}) => {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
@@ -29,9 +32,15 @@ export const AppSidebarView: React.FC<AppSidebarViewProps> = () => {
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
-          {SidebarNavItems.map((item) => (
+          {roleFilteredSidebarItems.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title} asChild>
+              <SidebarMenuButton
+                tooltip={item.title}
+                asChild
+                className={cn(``, {
+                  "bg-gray-400 hover:bg-gray-300": isActiveRoute(item.to),
+                })}
+              >
                 <Link to={item.to}>
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
@@ -41,9 +50,6 @@ export const AppSidebarView: React.FC<AppSidebarViewProps> = () => {
           ))}
         </SidebarMenu>
       </SidebarContent>
-      {/* <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter> */}
     </Sidebar>
   );
 };

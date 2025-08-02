@@ -11,6 +11,7 @@ import { LocalStorage } from "@/utils";
 import { LocalStorageKey } from "@/constants";
 
 const defaultValues: PatientKycFormValues = {
+  username: "",
   fullName: "",
   address: "",
   bloodGroup: "",
@@ -54,7 +55,7 @@ export const usePatientKyc = () => {
   const onSubmit = handleSubmit(async (data) => {
     await createPatientKyc(data);
     updateKycStatusInLocalStorage();
-    navigate(Route.Dashboard.Index);
+    navigate(Route.Auth.Login);
   });
 
   return {
