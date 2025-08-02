@@ -8,7 +8,6 @@ import { Route } from "@/routes";
 import { saveAuthDataInLocalStorage } from "@/utils/auth";
 
 const defaultValues: SignupFormValues = {
-  username: "",
   email: "",
   password: "",
 };
@@ -22,7 +21,7 @@ export const useSignupForm = () => {
   });
 
   const { mutateAsync: signup, isPending: isSigningUp } = useSignupMutation();
-
+  
   const onSubmit = handleSubmit(async (data) => {
     const { data: signupData } = await signup(data);
     saveAuthDataInLocalStorage(signupData.accessToken, signupData.user);

@@ -1,7 +1,6 @@
 import type { User } from "../user/user.types";
 
 export type SignupRequestDto = {
-  username: string;
   email: string;
   password: string;
 };

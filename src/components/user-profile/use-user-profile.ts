@@ -11,7 +11,7 @@ export const useUserProfile = () => {
     return;
   }
 
-  const userInitial = user.username.slice(0, 1);
+  const userInitial = user.email.slice(0, 1);
 
   return { user, userInitial };
 };
