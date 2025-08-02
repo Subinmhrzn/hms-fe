@@ -27,6 +27,10 @@ export const Route = {
     PatientSearchHospitalDoctors: "/dashboard/patient/hospitals/:hospitalId",
     PatientSearchHospitalDoctorsView:
       "/dashboard/patient/hospitals/:hospitalId/:doctorId",
+    PatientBookings: "/dashboard/patient/bookings",
+    PatientMedicalHistory: "/dashboard/patient/medical-history",
+    HospitalPatientBookings: "/dashboard/hospital/patient-bookings",
+    DoctorGivenPrescriptions: "/dashboard/doctor/given-prescriptions",
   },
   NotFound: "*",
 } as const;

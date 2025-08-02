@@ -15,6 +15,10 @@ import { HosptialDoctorView } from "@/pages/dashboard/components/hosptial-doctor
 import { PatientSearchHospitals } from "@/pages/dashboard/components/patient-search-hospitals";
 import { PatientSearchHospitalDoctors } from "@/pages/dashboard/components/patient-search-hospital-doctors";
 import { PatientSearchHospitalDoctorsView } from "@/pages/dashboard/components/patient-search-hospital-doctors-view";
+import { PatientBookings } from "@/pages/dashboard/components/patient-bookings";
+import { HospitalPatientBookings } from "@/pages/dashboard/components/hospital-patient-bookings";
+import { PatientMedicalHistory } from "@/pages/dashboard/components/patient-medical-history";
+import { DoctorGivenPrescriptions } from "@/pages/dashboard/components/doctor-given-prescriptions";
 
 export const DashboardRoutes: RouteObject[] = [
   {
@@ -73,6 +77,22 @@ export const DashboardRoutes: RouteObject[] = [
       {
         path: Route.Dashboard.PatientSearchHospitalDoctorsView,
         element: <PatientSearchHospitalDoctorsView />,
+      },
+      {
+        path: Route.Dashboard.PatientBookings,
+        element: <PatientBookings />,
+      },
+      {
+        path: Route.Dashboard.PatientMedicalHistory,
+        element: <PatientMedicalHistory />,
+      },
+      {
+        path: Route.Dashboard.HospitalPatientBookings,
+        element: <HospitalPatientBookings />,
+      },
+      {
+        path: Route.Dashboard.DoctorGivenPrescriptions,
+        element: <DoctorGivenPrescriptions />,
       },
     ],
   },

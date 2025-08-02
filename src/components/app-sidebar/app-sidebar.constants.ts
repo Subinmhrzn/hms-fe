@@ -1,5 +1,6 @@
 import { Route } from "@/routes";
 import {
+  BookIcon,
   GraduationCapIcon,
   HospitalIcon,
   InfoIcon,
@@ -57,6 +58,24 @@ export const SidebarNavItems: SidebarNavItem[] = [
     title: "Hospitals",
     to: Route.Dashboard.PatientSearchHospitals,
     icon: HospitalIcon,
+    allowedRoles: [Role.Patient],
+  },
+  {
+    title: "My Appointments",
+    to: Route.Dashboard.PatientBookings,
+    icon: BookIcon,
+    allowedRoles: [Role.Patient],
+  },
+  {
+    title: "Patient Bookings",
+    to: Route.Dashboard.HospitalPatientBookings,
+    icon: BookIcon,
+    allowedRoles: [Role.HospitalAdmin],
+  },
+  {
+    title: "My Medical History",
+    to: Route.Dashboard.PatientMedicalHistory,
+    icon: BookIcon,
     allowedRoles: [Role.Patient],
   },
 ] as const;
