@@ -25,7 +25,7 @@ export const AppSidebarView: React.FC<AppSidebarViewProps> = ({
           <SidebarMenuItem>
             <SidebarMenuButton className="data-[slot=sidebar-menu-button]:!p-1.5">
               <LaptopMinimalIcon className="!size-5" />
-              <span className="text-base font-semibold">Hackathon</span>
+              <span className="text-base font-semibold">JeevanSwasthya</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
