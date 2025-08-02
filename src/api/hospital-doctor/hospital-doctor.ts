@@ -3,6 +3,7 @@ import { HOSPITAL_DOCTOR_API } from "./hospital-doctor.api";
 import type {
   AddDoctorRequestDto,
   AddDoctorResponseDto,
+  GetAddedDoctorDto,
   GetAddedDoctorsResponseDto,
 } from "./hospital-doctor.types";
 import { generatePath } from "react-router";
@@ -25,5 +26,15 @@ export const getAddedDoctorsByHospitalId = async (hospitalId: string) => {
     generatePath(HOSPITAL_DOCTOR_API.GET_ADDED_DOCTORS_BY_HOSPITAL_ID, {
       id: hospitalId,
     }),
+  );
+};
+
+export const getDoctorByHospitalAndDoctorId = async (
+  hospitalId: string,
+  doctorId: string,
+) => {
+  return await HttpClient.get<GetAddedDoctorDto>(
+    HOSPITAL_DOCTOR_API.GET_DOCTOR_BY_HOSPITAL_AND_DOCTOR_ID,
+    { params: { hospitalId, doctorId } },
   );
 };
